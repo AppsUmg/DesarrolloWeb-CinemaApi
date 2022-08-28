@@ -2,15 +2,44 @@ let PMax = 10;
 let IdPagina = "MF";
 var Col = 0;
 
-function getPeliculas() {
-    for (let index = 0; index < PMax; index++) {
-        let HTML = "";
-        
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            url: "https://movie.azurewebsites.net/api/cartelera?imdbID=MF"+index,
-           // data: { IdUsuario: $('#txtUsuario').val(), Password: $('#txtPassword').val() },
+
+
+function MostrarModal(ID) {
+    LoadInstances('.modal');
+    element = document.getElementById(ID);
+    
+    instance = M.Modal.getInstance(element);
+    instance.open();
+}
+
+
+function LoadInstances(tipoInstancia) {
+    var elems = document.querySelectorAll('' + tipoInstancia + '');
+    var options = {}
+
+    if (tipoInstancia == ".datepicker") {
+        var instances = M.Datepicker.init(elems, options);
+    }
+
+    if (tipoInstancia == ".modal") {
+        var instances = M.Modal.init(elems, options);
+    }
+
+}
+
+
+
+
+
+
+
+function setPelicula(Titulo,Año,Tipo,UrlImg,Ubicacion,Descripcion) {
+    console.log(UrlImg);
+     /*   $.ajax({
+            type: "POST",
+            //dataType: "json",
+            url: "http://webumg.azurewebsites.net/api/CinemaApi?Tittle="+Titulo+"&Year="+Año+"&Type="+Tipo+"&Img="+UrlImg+"&Ubication="+Ubicacion+"&Description="+Descripcion,
+            //data: { IdUsuario: $('#txtUsuario').val(), Password: $('#txtPassword').val() },
             contentType: "application/json; charset=utf-8",
             async: false,
             error: function (jqXHR, textStatus, errorThrown) {
@@ -24,7 +53,23 @@ function getPeliculas() {
                 console.log(errorThrown);
             },
             success: function (Data) {
+
+                
                   
+
+
+                  document.getElementById('addt').value = ""
+                  document.getElementById('addYear').value = ""
+                  document.getElementById('addType').value = ""
+                  document.getElementById('addImg').value = ""
+                  document.getElementById('addUbication').value = ""
+                  document.getElementById('addDescrip').value = ""
+
+                  M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
+
+
+
+
                  if(Data != null){
                      HTML += '<tr>';
                      HTML += '<td><img src="'+Data.Poster+'" width="150" height="150" style="border-radius: 25%;"></td>';
@@ -40,16 +85,32 @@ function getPeliculas() {
                      $("#tabla-peliculas").append(HTML);
                     }
             }
-            
+        );
+          */
+        const url = "http://webumg.azurewebsites.net/api/CinemaApi?Tittle="+Titulo+"&Year="+Año+"&Type="+Tipo+"&Img="+UrlImg+"&Ubication="+Ubicacion+"&Description="+Descripcion;
+        var headers = {}
+        
+        fetch(url, {
+            method : "POST",
+            mode: 'cors',
+            headers: headers
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(response.error)
+            }
+            return response.json();
+        })
+        .then(data => {
+            M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
+
+
+        })
+        .catch(function(error) {
+            M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
+
+
         });
-        
-        
-        
-    } 
+    }
+ 
    
-    
-
-
-    
-
-}
