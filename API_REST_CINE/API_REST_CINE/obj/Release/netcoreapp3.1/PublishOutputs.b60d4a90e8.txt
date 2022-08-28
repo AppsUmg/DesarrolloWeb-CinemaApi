@@ -1,0 +1,13 @@
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\API_REST_CINE.exe
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\API_REST_CINE.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\API_REST_CINE.deps.json
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\API_REST_CINE.runtimeconfig.json
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\API_REST_CINE.pdb
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\System.Data.SqlClient.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Kevin\source\repos\API_REST_CINE\API_REST_CINE\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
