@@ -11,7 +11,7 @@
 
 </head>
 
-<body style="background-color: #212121">
+<body style="background-color: #212121" onload="getPeliculas()">
 
 	<!-- AÑADIR PELICULA -->
 	<div id="ModalAddMovie" class="modal modal-fixed-footer" style="border-radius: 2%;">
@@ -69,15 +69,8 @@
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary" onclick="
-				setPelicula(
-							 document.getElementById('addt').value
-					   		, document.getElementById('addYear').value
-					   		, document.getElementById('addType').value
-							, document.getElementById('addImg').value
-							, document.getElementById('addUbication').value
-							, document.getElementById('addDescrip').value
-				           )">Save changes</button>
+			<button type="button" class="btn btn-primary modal-close " onclick="
+				setPelicula()">Save changes</button>
 		</div>
 	</div>
 

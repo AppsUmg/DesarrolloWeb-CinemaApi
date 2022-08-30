@@ -29,88 +29,75 @@ function LoadInstances(tipoInstancia) {
 
 
 
+function getPeliculas(){
+
+
+ $.ajax({
+    url: 'http://webumg.azurewebsites.net/api/CinemaApi',
+    type: "GET",
+    dataType: "jsonp",
+    contentType: "application/json; charset=utf-8",
+    success: function (data) {
+      console.log(data)
+    }
+});
+}
 
 
 
+function setPelicula() {
+   var Titulo = document.getElementById('addt').value;
+   var Año = document.getElementById('addYear').value;
+   var Tipo = document.getElementById('addType').value;
+   var UrlImg = document.getElementById('addImg').value;
+   var Ubicacion = document.getElementById('addUbication').value;
+   var Descripcion = document.getElementById('addDescrip').value;
+    console.log(Titulo)
+    		 
+    if (Titulo != "") {
+        if (Año != "") {
+            if (Tipo != "") {
+                if (UrlImg != "") {
+                    if (Ubicacion != "") {
+                        if (Descripcion != "") {
 
-function setPelicula(Titulo,Año,Tipo,UrlImg,Ubicacion,Descripcion) {
-    console.log(UrlImg);
-     /*   $.ajax({
-            type: "POST",
-            //dataType: "json",
-            url: "http://webumg.azurewebsites.net/api/CinemaApi?Tittle="+Titulo+"&Year="+Año+"&Type="+Tipo+"&Img="+UrlImg+"&Ubication="+Ubicacion+"&Description="+Descripcion,
-            //data: { IdUsuario: $('#txtUsuario').val(), Password: $('#txtPassword').val() },
-            contentType: "application/json; charset=utf-8",
-            async: false,
-            error: function (jqXHR, textStatus, errorThrown) {
-                //M.toast({ html: 'Ocurrio un error', classes: 'rounded black white-text' });
-                console.log('status code: ' + jqXHR.status + 'errorThrown: ' + errorThrown + 'jqXHR.responseText:' + jqXHR.responseText);
-                console.log('jqXHR:');
-                console.log(jqXHR);
-                console.log('textStatus:');
-                console.log(textStatus);
-                console.log('errorThrown:');
-                console.log(errorThrown);
-            },
-            success: function (Data) {
-
-                
-                  
-
-
-                  document.getElementById('addt').value = ""
-                  document.getElementById('addYear').value = ""
-                  document.getElementById('addType').value = ""
-                  document.getElementById('addImg').value = ""
-                  document.getElementById('addUbication').value = ""
-                  document.getElementById('addDescrip').value = ""
-
-                  M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
-
-
-
-
-                 if(Data != null){
-                     HTML += '<tr>';
-                     HTML += '<td><img src="'+Data.Poster+'" width="150" height="150" style="border-radius: 25%;"></td>';
-                     HTML += '<td>'+Data.imdbID+'</td>';
-                     HTML += '<td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons">edit</i></button></td>';
-                     HTML += '<td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons">delete</i></button></td>';
-                     HTML += '<td>'+Data.Title+'</td>';
-                     HTML += '<td>'+Data.Year+'</td>';
-                     HTML += '<td>'+Data.Type+'</td>';
-                     HTML += '<td>'+Data.Ubication+'</td>';
-                     HTML += '<td>'+Data.description+'</td>';
-                     HTML += '<tr>';
-                     $("#tabla-peliculas").append(HTML);
+                            const Rurl = "http://webumg.azurewebsites.net/api/CinemaApi?Tittle="+Titulo+"&Year="+Año+"&Type="+Tipo+"&Img="+UrlImg+"&Ubication="+Ubicacion+"&Description="+Descripcion;
+       
+                            $.post(Rurl, function(data, status){
+                              M.toast({ html: "Data: " + data + "\nStatus: " + status, classes: 'rounded black white-text' }); 
+                            });
+                      
+                            document.getElementById('addt').value = ""
+                            document.getElementById('addYear').value = ""
+                            document.getElementById('addType').value = ""
+                            document.getElementById('addImg').value = ""
+                            document.getElementById('addUbication').value = ""
+                            document.getElementById('addDescrip').value = ""
+                      
+                             M.toast({ html: "Pelicula Añadida.", classes: 'rounded black white-text' });
+                      
+                        }else{
+                            M.toast({ html: "El Campo Descripcion esta vacio", classes: 'rounded black white-text' }); 
+                        }
+                    }else{
+                        M.toast({ html: "El Campo Ubicacion esta vacio", classes: 'rounded black white-text' }); 
                     }
+                }else{
+                    M.toast({ html: "El Campo UrlImagen esta vacio", classes: 'rounded black white-text' }); 
+                }
+            }else{
+                M.toast({ html: "El Campo Tipo esta vacio", classes: 'rounded black white-text' }); 
             }
-        );
-          */
-        const url = "http://webumg.azurewebsites.net/api/CinemaApi?Tittle="+Titulo+"&Year="+Año+"&Type="+Tipo+"&Img="+UrlImg+"&Ubication="+Ubicacion+"&Description="+Descripcion;
-        var headers = {}
-        
-        fetch(url, {
-            method : "POST",
-            mode: 'cors',
-            headers: headers
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(response.error)
-            }
-            return response.json();
-        })
-        .then(data => {
-            M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
+        }else{
+            M.toast({ html: "El Campo Año esta vacio", classes: 'rounded black white-text' }); 
+        }
+    }else{
+        M.toast({ html: "El Campo titulo esta vacio", classes: 'rounded black white-text' }); 
+    }
 
-
-        })
-        .catch(function(error) {
-            M.toast({ html: Data.MENSAJE, classes: 'rounded black white-text' });
-
-
-        });
+   
+    
+                 
     }
  
    
